@@ -1,0 +1,60 @@
+/* import fonts */
+@import url('./font.css');
+
+/* css partials */
+@import url('./partials/variables.css');
+@import url('./partials/global.css');
+
+
+
+/* Inicio Nav */
+.header-area .main-menu .navbar .navbar-brand{
+    padding: 0 2rem 0 5rem;
+}
+
+.header-area .main-menu .navbar {
+    padding: 1rem;
+}
+
+.header-area .main-menu .nav-item .nav-link{
+    font-family: var(--roboto);
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 1.7rem;
+    color: var(--title-color);
+} 
+
+.header-area .main-menu .navbar-nav a:hover{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+/* Fin Nav*/
+
+
+/* Inicio Home */
+.home{
+    padding: 2rem 5rem;
+}
+
+.home .home-title h2 > span{
+    display: block;
+    font-family: var(--roboto);
+    font: bold;
+    font-size: 49px/ 60px;
+    letter-spacing: 20px;   
+}
+
+.home .home-title .paragraph > p{
+    padding: .4rem 0;
+}
+
+/* Fin Home */
+
+
+
+/* brand logo size */
+.img-size{
+    width: 40%;
+}

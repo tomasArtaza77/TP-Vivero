@@ -1,0 +1,5 @@
+p.para{
+    color: var(--text-color);
+    font-size: 16px/ 25px;
+    font-family: var(--roboto);
+}
