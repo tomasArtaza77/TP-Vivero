@@ -1,1 +1,105 @@
-<p>products</p>
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Ejemplo Formulario con Js</title>
+    <!-- Jquery js -->
+	<script src="../js/jquery.3.6.0.js"></script>
+	<!-- Bootstrap js -->
+	<script src="../js/bootstrap.min.js"></script>
+	<!-- Header -->
+    <script> 
+		$(function(){
+			$("#includedContent").load("./header.html");
+		});
+    </script> 
+
+</head>
+<body>
+
+	<div id="includedContent"></div>
+
+    <button onclick="showTable()">Mostrar</button>
+
+    <div id="products-page"></div>
+
+    <script>
+		const products = [
+			{
+				"id": 1, 
+				"nombre_comun": 'Peral', 
+				"nombre_cientifico": 'Pyrus communis', 
+				"color": '-', 
+				"tipo_suelo": 'Basico', 
+				"fase": '6 meses', 
+				"ubicacion": 'Fila 1, Columna 1', 
+				"estado": 'ListaParaVenta'
+			},
+			{
+				"id": 2, 
+				"nombre_comun": 'Fresa', 
+				"nombre_cientifico": 'Fragaria', 
+				"color": '-', 
+				"tipo_suelo": 'Basico', 
+				"fase": '2 meses', 
+				"ubicacion": 'Fila 1, Columna 2', 
+				"estado": 'EnLote'
+			},
+			{
+				"id": 3, 
+				"nombre_comun": 'Fresia', 
+				"nombre_cientifico": 'Freesia', 
+				"color": 'Amarillo', 
+				"tipo_suelo": 'Basico', 
+				"fase": '2 meses', 
+				"ubicacion": 'Fila 2, Columna 1', 
+				"estado": 'EnExperimento'
+			},
+			{
+				"id": 4, 
+				"nombre_comun": 'Iris', 
+				"nombre_cientifico": 'Iris Germánica', 
+				"color": 'Morado', 
+				"tipo_suelo": 'Basico', 
+				"fase": 'Floracion', 
+				"ubicacion": 'Fila 2, Columna 2', 
+				"estado": 'DeBaja'
+			},
+			{
+				"id": 5, 
+				"nombre_comun": 'Nardo sirio', 
+				"nombre_cientifico": 'Patrinia scabiosifolia', 
+				"color": 'Dorado', 
+				"tipo_suelo": 'Basico', 
+				"fase": '1 mes', 
+				"ubicacion": 'Fila 3, Columna 1', 
+				"estado": 'ListaParaVenta'
+			},
+
+		];
+
+		function showTable(params) {
+			buildTable(products);
+		}
+
+		function buildTable(data){
+			console.log(data);
+			let table = '';
+			for (let i = 0; i < data.length; i++) {
+				table += 
+				`<li>
+					<td>${data[i].id}</td>
+					<td>${data[i].nombre_comun}</td>
+					<td>${data[i].nombre_cientifico}</td>
+
+				</li>`;
+				console.log(table);
+				document.getElementById('products-page').innerHTML = table;
+			}
+
+		}
+    </script>
+
+</body>
+</html>

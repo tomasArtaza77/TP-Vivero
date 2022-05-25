@@ -1,4 +1,3 @@
-
 const route = (event) => {
     event = event || window.event;
     event.preventDefault();
@@ -8,9 +7,9 @@ const route = (event) => {
 
 const routes = {
     "/": "../pages/home.html",
-    "/products": "../pages/products.html",
+    "/products": "../products.html",
     "/about": "../pages/about.html",
-    "/users": "../pages/users.html",
+    "/users": "../pages/login.html",
 };
 
 const handleLocation = async () => {
