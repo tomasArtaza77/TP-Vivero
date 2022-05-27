@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>Vivero - Registrar Planta</title>
+    <script src="../js/jquery.3.6.0.js"></script>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script>
+        $(function () {
+            $("#includedContent").load("/pages/header.html");
+        });
+    </script>
+</head>
+
+<body>
+
+    <div id="includedContent"></div>
+    <section class="registro">
+        <div class="container-fuild">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="registro-image">
+                        <img src="../img/menu-img/botanica.jpg" alt="Home" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 registro-title">
+                    <div class="input-container">
+                        <form>
+                            <h2 class="tituloTiendas">Datos de la Planta</h2>
+                            <!-- <title id> Datos de la Planta</title> -->
+
+                            <input class="input" id="nombreCientifico" type="text" placeholder="Nombre Científico">
+                            <input class="input" id="nombreComun" type="text" placeholder="Nombre Común">
+                            <input class="input" id="fase" type="text" placeholder="Fase">
+                            <input class="input" id="color" type="text" placeholder="Color">
+
+                            <h2 class="tituloTiendas">Datos de la Especie</h2>
+
+                            <input class="input" id="nombreFamilia" type="text" placeholder="Familia">
+                            <input class="input" id="cuidados" type="text" placeholder="Cuidados">
+                            <input class="input" id="fruto" type="text" placeholder="Fruto">
+                            <input class="input" id="tipoSuelo" type="text" placeholder="Tipo de suelo">
+
+                            <h2 class="tituloTiendas">Ubicación</h2>
+
+                            <input class="input" id="columna" type="text" placeholder="Columna">
+                            <input class="input" id="fila" type="text" placeholder="Fila">
+                        </form>
+
+                        <button style="background-color: green; border-color: aliceblue; width: 40%; margin-left: 20%;"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick()" type="button"
+                            class="btn btn-primary btn-lg">Registrar</button>
+                        <!-- <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick()">Click
+                            me</button> -->
+
+                        <p id="demo"></p>
+
+                        <script>
+                            function myFunction() {
+                                document.getElementById("demo").innerHTML = "Hello World";
+                            }
+                        </script>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="modal fade" id="exampleModal" data-target="#myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="titulo"> ¡Planta registrada exitosamente!</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="contenedor-datos">                   
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/jquery.3.6.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/registro.js"></script>
+</body>
+
+</html>
