@@ -4,20 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log in</title>
     
     <!-- css file -->
     <link rel="stylesheet" href="../css/partials/login.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="../css/all.min.css">
+
+    
     <!-- Jquery js -->
-	<script src="../js/jquery.3.6.0.js"></script>
-	<!-- Bootstrap js -->
-	<script src="../js/bootstrap.min.js"></script>
-    <!-- Header -->
-    <script> 
-		$(function(){
-			$("#includedContent").load("./header.html");
-		});
-    </script> 
+    <script src="../js/jquery.3.6.0.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Login -->
+    <script src="../js/login.js"></script>
 
 </head>
 <body>
@@ -25,9 +29,38 @@
     <!-- 
     <a href="/" type="button" onclick="route()">HOME</a>
      -->
-     <div id="includedContent"></div>   
-     <p>estamos en el login</p>
     
+    <!-- Inicio Header -->
+    <header class="header-area">
+        <div class="main-menu">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="me-auto"></div>
+                        <a class="navbar-brand"><img src="../img/brand-logo/logo/logo2.png" class="img-size"></a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="../pages/home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/products.html">Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/about.html">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/login.html">Log In</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Fin Header -->
 
     <div class = "container">
         <div class="wrapper">
@@ -45,28 +78,17 @@
                 <!-- ARREGLAR ESTO, NO TOMA LA INFO DEL LOGIN. TIRA ERROR
                     al parecer al ser button no toma la data, 
                  -->
-                <button class="btn btn-lg btn-primary btn-block" type="submit" href="/" onclick="route()">Login btn</button>  			
+                <button class="btn btn-lg btn-primary btn-block" type="submit" href="home.html" onclick="login()">Login btn</button>  			
 
             </form>			
 
             <div id="success_login" style="display: none;">
                 <h1>Welcome back!</h1>
-                <a class="btn btn-lg btn-primary btn-block" type="button" href="/" onclick="route()">Close</a>
+                <a class="btn btn-lg btn-primary btn-block" type="button" href="home.html" onclick="">Close</a>
             </div>
 
         </div>
     </div>
-    
-    
-
-    <!-- Jquery js -->
-    <script src="./js/jquery.3.6.0.js"></script>
-    <!-- Bootstrap js -->
-    <script src="./js/bootstrap.min.js"></script>
-    <!-- Router -->
-    <script src="../js/router.js"></script>
-    <!-- Login -->
-    <script src="../js/login.js"></script>
 
 </body>
 </html>

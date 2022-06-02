@@ -1,105 +1,72 @@
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="UTF-8">
-    <title>Ejemplo Formulario con Js</title>
-    <!-- Jquery js -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+	<!-- css file -->
+	<link rel="stylesheet" href="../css/partials/products.css">
+	<link rel="stylesheet" href="../css/style.css">
+	<!-- Bootstrap css -->
+	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	
+	<!-- font awesome icons -->
+	<link rel="stylesheet" href="../css/all.min.css"> 
+	
+	<!-- Jquery js -->
 	<script src="../js/jquery.3.6.0.js"></script>
 	<!-- Bootstrap js -->
 	<script src="../js/bootstrap.min.js"></script>
-	<!-- Header -->
-    <script> 
-		$(function(){
-			$("#includedContent").load("./header.html");
-		});
-    </script> 
+	<!-- Products -->
+	<script src="../js/products.js"></script>
 
 </head>
 <body>
+	
 
-	<div id="includedContent"></div>
+    <!-- Inicio Header -->
+	<header class="header-area">
+		<div class="main-menu">
+			<nav class="navbar navbar-expand-lg">
+				<div class="container-fluid">
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<div class="me-auto"></div>
+						<a class="navbar-brand"><img src="../img/brand-logo/logo/logo2.png" class="img-size"></a>
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link active" href="../pages/home.html">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../pages/products.html">Products</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../pages/about.html">About</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../pages/login.html">Log In</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
+	</header>
+	<!-- Fin Header -->
+	
+	<div class="container">
+		<p class="para">Show Products</p>
+	</div>
 
-    <button onclick="showTable()">Mostrar</button>
-
+	
+	<div class="container">
+		<button onclick="showTable()">Mostrar</button>
+	</div>
     <div id="products-page"></div>
-
-    <script>
-		const products = [
-			{
-				"id": 1, 
-				"nombre_comun": 'Peral', 
-				"nombre_cientifico": 'Pyrus communis', 
-				"color": '-', 
-				"tipo_suelo": 'Basico', 
-				"fase": '6 meses', 
-				"ubicacion": 'Fila 1, Columna 1', 
-				"estado": 'ListaParaVenta'
-			},
-			{
-				"id": 2, 
-				"nombre_comun": 'Fresa', 
-				"nombre_cientifico": 'Fragaria', 
-				"color": '-', 
-				"tipo_suelo": 'Basico', 
-				"fase": '2 meses', 
-				"ubicacion": 'Fila 1, Columna 2', 
-				"estado": 'EnLote'
-			},
-			{
-				"id": 3, 
-				"nombre_comun": 'Fresia', 
-				"nombre_cientifico": 'Freesia', 
-				"color": 'Amarillo', 
-				"tipo_suelo": 'Basico', 
-				"fase": '2 meses', 
-				"ubicacion": 'Fila 2, Columna 1', 
-				"estado": 'EnExperimento'
-			},
-			{
-				"id": 4, 
-				"nombre_comun": 'Iris', 
-				"nombre_cientifico": 'Iris Germánica', 
-				"color": 'Morado', 
-				"tipo_suelo": 'Basico', 
-				"fase": 'Floracion', 
-				"ubicacion": 'Fila 2, Columna 2', 
-				"estado": 'DeBaja'
-			},
-			{
-				"id": 5, 
-				"nombre_comun": 'Nardo sirio', 
-				"nombre_cientifico": 'Patrinia scabiosifolia', 
-				"color": 'Dorado', 
-				"tipo_suelo": 'Basico', 
-				"fase": '1 mes', 
-				"ubicacion": 'Fila 3, Columna 1', 
-				"estado": 'ListaParaVenta'
-			},
-
-		];
-
-		function showTable(params) {
-			buildTable(products);
-		}
-
-		function buildTable(data){
-			console.log(data);
-			let table = '';
-			for (let i = 0; i < data.length; i++) {
-				table += 
-				`<li>
-					<td>${data[i].id}</td>
-					<td>${data[i].nombre_comun}</td>
-					<td>${data[i].nombre_cientifico}</td>
-
-				</li>`;
-				console.log(table);
-				document.getElementById('products-page').innerHTML = table;
-			}
-
-		}
-    </script>
 
 </body>
 </html>
