@@ -12,7 +12,7 @@ function mapa() {
 }
 
 function mostrarTiendas() {
-    $(".tituloTiendas").text("Tiendas adheridas");
+    $(".tituloTiendas").text("Tiendas");
     $(".listaTiendas").show();
 
     dibujarZonas();
