@@ -3,44 +3,47 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vivero</title>
 
-    <!-- Bootstrap css -->
-    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!--Librerias para que funcione leaflet (mapa)-->
+    <link rel="stylesheet" href="../js/leaflet/leaflet.css">
+    <script src="../js/leaflet/leaflet.js"></script>
 
-    <!-- css file -->
-    <link rel="stylesheet" href="../css/style.css">
-
-    <!-- font awesome icons -->
-    <link rel="stylesheet" href="../css/all.min.css">
+    <link rel="stylesheet" href="../js/leaflet/MarkerCluster.css">
+    <link rel="stylesheet" href="../js/leaflet/MarkerCluster.Default.css">
+    <script src="../js/leaflet/leaflet.markercluster-src.js"></script>
 
 
-    <!-- Jquery js -->
+    <!--Linkeo de codigo css y js-->
+    <link rel="stylesheet" href="../css/mapa.css">
+    <script src="../js/tiendas.js"></script>
     <script src="../js/jquery.3.6.0.js"></script>
-    <!-- Bootstrap js -->
-    <script src="../js/bootstrap.min.js"></script>
-    <!-- Router -->
-    <script src="../js/router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"
+        integrity="sha512-V6IDfQu/TH8jr2FUTNMaR8ck+NTj4lFftam3O4vumLTKlNO53KCUkhb26zJ2KmBpCno8C5K9C2eSK5a5H3FtZQ=="
+        crossorigin="anonymous"></script>
 
+    <script src="../js/mapa.js"></script>
+    <script src="https://kit.fontawesome.com/022fa97a17.js" crossorigin="anonymous"></script>
 
     <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#includedContent").load("header.html");
         });
     </script>
 
-
 </head>
 
-<body>
-    <!-- Inicio Header -->
-    <div id="header"></div>
+<body onload="mapa()">
+    <div id="includedContent"></div>
 
+    <div class="contenedorMapa">
+        <h1 class="tituloTiendas"></h1>
+        <div id="mapid"></div>
+    </div>
 
-    <p>about</p>
-
+    <select class="listaTiendas" style="display: none;" name="tiendas" size=11>
+        <optgroup id="grupo1" label="Tiendas:"></optgroup>
+    </select>
 
 
 </body>
