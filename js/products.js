@@ -8,7 +8,8 @@ const products = [
         "tipo_suelo": 'Basico', 
         "fase": '6 meses', 
         "ubicacion": 'Fila 1, Columna 1', 
-        "estado": 'ListaParaVenta'
+        "estado": 'ListaParaVenta',
+        "familia": 'Rosaceae'
     },
     {
         "id": 2, 
@@ -19,7 +20,8 @@ const products = [
         "tipo_suelo": 'Basico', 
         "fase": '2 meses', 
         "ubicacion": 'Fila 1, Columna 2', 
-        "estado": 'EnLote'
+        "estado": 'EnLote',
+        "familia": 'Rosaceae'
     },
     {
         "id": 3,
@@ -30,7 +32,8 @@ const products = [
         "tipo_suelo": 'Basico', 
         "fase": '2 meses', 
         "ubicacion": 'Fila 2, Columna 1', 
-        "estado": 'EnExperimento'
+        "estado": 'EnExperimento',
+        "familia": 'Iridaceae'
     },
     {
         "id": 4, 
@@ -41,7 +44,8 @@ const products = [
         "tipo_suelo": 'Basico', 
         "fase": 'Floracion', 
         "ubicacion": 'Fila 2, Columna 2', 
-        "estado": 'DeBaja'
+        "estado": 'DeBaja',
+        "familia": 'Iridaceae'
     },
     {
         "id": 5, 
@@ -52,45 +56,96 @@ const products = [
         "tipo_suelo": 'Basico', 
         "fase": '1 mes', 
         "ubicacion": 'Fila 3, Columna 1', 
-        "estado": 'ListaParaVenta'
+        "estado": 'ListaParaVenta',
+        "familia": 'Caprifoliaceae'
     },
 
 ];
 
+// INICIO FILTRAR POR FAMILIA
+$('#search-input').on('keyup', function(){
+    let value = $(this).val()
+    console.log("Value: ", value)
+    let data = filterData(value, products)
+    buildFilteredTable(data)
+})
 
-function showTable(params) {
-    buildTable(products);
+function filterData(value, data){
+    let filtrar = []
+    for (let i = 0; i < data.length; i++) {
+        value = value.toLowerCase()
+        let familia = data[i].familia.toLowerCase()
+
+        if(familia.includes(value)){
+            filtrar.push(data[i])
+        }
+    }
+    return filtrar
 }
 
-
-function buildTable(data){
-    console.log(data);
-    let table = '';
-    for (let i = 0; i < data.length; i++) {
-        table += 
+function buildFilteredTable(array){
+    let table = document.getElementById('tabla-filtro')
+    table.innerHTML = ''
+    for (let i = 0; i < array.length; i++) {
+        let row = 
         `
-        <div class="container mt-5">
-            <div class = "row">
-                <div class = "column"> 
-                    <div class = "card"> 
-                        <p>N°: ${data[i].id}</p>
-                        <img [src]="data[i].img" alt="Products">
-                        <p>Name: ${data[i].nombre_comun}</p>
-                        <p>Nombre científico: ${data[i].nombre_cientifico}</p>
-                        <p>Color: ${data[i].color}</p>
-                        <p>Tipo de suelo: ${data[i].tipo_suelo}</p>
-                        <p>Fase: ${data[i].fase}</p>
-                        <p>Ubicación: ${data[i].ubicacion}</p>
-                        <p>Estado: ${data[i].estado}</p>
-                    </div>
+        <div class = "row">
+            <div class = "column"> 
+                <div class = "card"> 
+                    <p>N°: ${array[i].id}</p>
+                    <img [src]="${array[i]}" alt="Product image">
+                    <p>Name: ${array[i].nombre_comun}</p>
+                    <p>Nombre científico: ${array[i].nombre_cientifico}</p>
+                    <p>Color: ${array[i].color}</p>
+                    <p>Tipo de suelo: ${array[i].tipo_suelo}</p>
+                    <p>Fase: ${array[i].fase}</p>
+                    <p>Ubicación: ${array[i].ubicacion}</p>
+                    <p>Estado: ${array[i].estado}</p>
+                    <p>Familia: ${array[i].familia}</p>
                 </div>
             </div>
-	    </div>
+        </div>	    
         `
         ;
-
-        console.log(table);
-        document.getElementById('products-page').innerHTML = table;
+        table.innerHTML += row;
     }
 
 }
+// FIN FILTRAR POR FAMILIA
+
+
+// INICIO MOSTRAR TABLA
+function showTable() {
+    buildTable();
+}
+
+
+function buildTable(){
+    let table = document.getElementById('tabla')
+    table.innerHTML = ''
+    for (let i = 0; i < products.length; i++) {
+        let row = 
+        `
+        <div class = "row">
+            <div class = "column"> 
+                <div class = "card"> 
+                    <p>N°: ${products[i].id}</p>
+                    <img [src]="${products[i]}" alt="Product image">
+                    <p>Name: ${products[i].nombre_comun}</p>
+                    <p>Nombre científico: ${products[i].nombre_cientifico}</p>
+                    <p>Color: ${products[i].color}</p>
+                    <p>Tipo de suelo: ${products[i].tipo_suelo}</p>
+                    <p>Fase: ${products[i].fase}</p>
+                    <p>Ubicación: ${products[i].ubicacion}</p>
+                    <p>Estado: ${products[i].estado}</p>
+                    <p>Familia: ${products[i].familia}</p>
+                </div>
+            </div>
+        </div>	    
+        `
+        ;
+        table.innerHTML += row;
+    }
+
+}
+// FIN MOSTRAR TABLA

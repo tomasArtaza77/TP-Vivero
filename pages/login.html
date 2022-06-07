@@ -36,33 +36,20 @@
 <body>
     <!-- Inicio Header -->
     <div id="header"></div>
-    <div class="container">
-        <div class="wrapper">
-            <form name="Login_Form" class="form-signin">
-                <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
-                <hr class="colorgraph"><br>
+    <!-- Fin Header -->
 
-                <input type="email" class="form-control" id="userEmail" placeholder="Email" required="" />
-                <input type="password" class="form-control" id="userPassword" placeholder="Password" required="" />
+    <form class="form-signin" id="sec_login">
+        <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
+        <hr class="colorgraph"><br>
+        <input type="email" style="margin-bottom: 5px;" class="form-control" id="input_correo" placeholder="Correo Electrónico" required="true">
+        <input type="password" class="form-control" id="input_password" placeholder="Contraseña" required="true">
+        <button type="submit" id="boton_iniciar" value="Iniciar Sesión" onclick="login()">Iniciar Sesión</button>
+    </form>
 
-                <!-- 
-                    CON ESTE BOTON FUNCIONA TODO BIEN
-                -->
-                <a class="btn btn-lg btn-primary btn-block" type="submit" onclick="login()">Login a</a>
-                <!-- ARREGLAR ESTO, NO TOMA LA INFO DEL LOGIN. TIRA ERROR
-                    al parecer al ser button no toma la data, 
-                 -->
-                <button class="btn btn-lg btn-primary btn-block" type="submit" href="home.html" onclick="login()">Login
-                    btn</button>
-
-            </form>
-
-            <div id="success_login" style="display: none;">
-                <h1>Welcome back!</h1>
-                <a class="btn btn-lg btn-primary btn-block" type="button" href="home.html" onclick="">Close</a>
-            </div>
-
-        </div>
+    <div class="form-signin" id="sec_loginExitoso" style="display: none;">
+        <h3 class="form-signin-heading">Logueo Exitoso.</h3>
+        <hr class="colorgraph"><br>
+        <a href="home.html" type="button" id="boton_iniciar">Cerrar</a>
     </div>
 
 </body>

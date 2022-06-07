@@ -1,27 +1,57 @@
-// actualmente este esta en el html
 function login() {
-    
-    let user, password;
 
-    user = document.getElementById("userEmail").value;
-    password = document.getElementById("userPassword").value;
+    var correo = $("#input_correo").val();
+    var password = $("#input_password").val();
+    var expresion_mail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+    var correoOK = expresion_mail.test(correo);
 
-    console.log("User info: ", user, ' ', password);
+    if (correo != "" && password != "" && correoOK) {
+        //Se guardan los datos obtenidos
 
-    if (user != '' && password != '') {
-        $("#success_login").show();
+        localStorage.setItem("correo", correo);
+        localStorage.setItem("logueado", true);
+
+        //Se limpian los imputs
+        $("#input_correo").val("");
+        $("#input_password").val("");
+
+        //Se oculta/muestan las secciones de interes
+        $("#sec_login").hide();
+        $("#sec_loginExitoso").show();
+
+        actualizar();
+    }else{
+        if(!correoOK){
+            alert("Por favor introduzca un mail válido (name@example.com)");
+        }else{
+            alert("Por favor introduzca todos los campos");
+        }
+        
     }
-            
+
 
 }
 
-function login2(){
-    var user, password;
-   
-    var user = $("#userEmail").val();
-    var password = $("#userPassword").val();
+function logout() {
+    //Se setean por default los datos para asi estar preparado para otro login
+    localStorage.removeItem("correo");
+    localStorage.setItem("logueado", false);
 
-    if (user != '' && password != '') {
-        $("#success_login").show();
+    $("#sec_login").show();
+    $("#sec_loginExitoso").hide();
+
+    actualizar();
+}
+
+function actualizar() {
+
+    var logueado = localStorage.getItem("logueado");
+
+    
+    if (logueado == "true") {
+        $(".subheader").show();
+    } else {
+        $(".subheader").hide();
     }
+
 }

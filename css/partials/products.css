@@ -15,7 +15,6 @@
   
   /* Clear floats after the columns */
   .row:after {
-    content: "";
     display: flex;
     clear: both;
   }
@@ -26,6 +25,16 @@
     padding: 16px;
     text-align: center;
     background-color: var(--primary-color);
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+
+  .filter-card{
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+    margin-top: 2em;
+    margin-bottom: 4em;
   }
   
   /* Responsive columns - one column layout (vertical) on small screens */

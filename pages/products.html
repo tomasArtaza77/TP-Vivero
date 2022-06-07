@@ -19,31 +19,42 @@
 	<script src="../js/jquery.3.6.0.js"></script>
 	<!-- Bootstrap js -->
 	<script src="../js/bootstrap.min.js"></script>
-	<!-- Products -->
-	<script src="../js/products.js"></script>
 
-	<script>
+
+	
+    <script>
         $(function () {
-            $("#header").load("header.html");
+            $("#includedContent").load("header.html");
         });
     </script>
 
-
 </head>
-
 <body>
-    <!-- Inicio Header -->
-    <div id="header"></div>
-
-	<!-- Fin Header -->
 	
+
+    <!-- Inicio Header -->
+    <div id="includedContent"></div>
+	<!-- Fin Header -->
+		
 	<div class="container">
-		<p class="para">Show Products</p>
+
+		<div class="row">
+			<div class="col">
+				<div class="card filter-card">
+					<p class="para">Filtrar productos por familia.</p>
+					<input id="search-input" class="form-control" type="text">
+				</div>
+				<div id="tabla-filtro"></div>
+			</div>
+		</div>
+
+		<p class="para">Mostrar productos.</p>
 		<button onclick="showTable()">Mostrar</button>
+		<div id="tabla"></div>
 	</div>
 
-
-    <div id="products-page"></div>
+    <!-- Products -->
+	<script src="../js/products.js"></script>
 
 </body>
 </html>
