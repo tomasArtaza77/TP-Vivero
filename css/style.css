@@ -108,6 +108,10 @@
     width: 40%;
 }
 
+.size{
+    width: 2em;
+}
+
 .input {
     font-family: var(--roboto);
     font: bold;

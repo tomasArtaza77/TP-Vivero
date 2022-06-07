@@ -93,7 +93,7 @@ function buildFilteredTable(array){
             <div class = "column"> 
                 <div class = "card"> 
                     <p>N°: ${array[i].id}</p>
-                    <img [src]="${array[i]}" alt="Product image">
+                    <img src="${array[i].img}" alt="Product image">
                     <p>Name: ${array[i].nombre_comun}</p>
                     <p>Nombre científico: ${array[i].nombre_cientifico}</p>
                     <p>Color: ${array[i].color}</p>
@@ -130,7 +130,7 @@ function buildTable(){
             <div class = "column"> 
                 <div class = "card"> 
                     <p>N°: ${products[i].id}</p>
-                    <img [src]="${products[i]}" alt="Product image">
+                    <img src="${products[i].img}" alt="Product image">
                     <p>Name: ${products[i].nombre_comun}</p>
                     <p>Nombre científico: ${products[i].nombre_cientifico}</p>
                     <p>Color: ${products[i].color}</p>

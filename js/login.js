@@ -40,18 +40,4 @@ function logout() {
     $("#sec_login").show();
     $("#sec_loginExitoso").hide();
 
-    actualizar();
-}
-
-function actualizar() {
-
-    var logueado = localStorage.getItem("logueado");
-
-    
-    if (logueado == "true") {
-        $(".subheader").show();
-    } else {
-        $(".subheader").hide();
-    }
-
 }
