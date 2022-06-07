@@ -36,6 +36,7 @@ function mostrarTiendas() {
                     "<b>" + "Telefóno: " + "</b>" + datosTiendas[index].telefono),
         ])
 
+        
 
         $("#grupo1").append("<option id=tienda" + index + ">" + datosTiendas[index].nombre + "</option>");
         $("#tienda" + index).on("click", function (event) {
