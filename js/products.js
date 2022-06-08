@@ -13,8 +13,8 @@ function buildTable(){
             <div class = "column"> 
                 <div class = "card"> 
                     <p>N°: ${element.id}</p>
-                    <img src="${element.img}" alt="Product image">
-                    <p>Name: ${element.nombre_comun}</p>
+                    <img src="${element.img}" alt="Product image"><br>
+                    <p>Nombre: ${element.nombre_comun}</p>
                     <p>Nombre científico: ${element.nombre_cientifico}</p>
                     <p>Color: ${element.color}</p>
                     <p>Tipo de suelo: ${element.tipo_suelo}</p>

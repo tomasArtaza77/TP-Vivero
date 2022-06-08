@@ -1,0 +1,51 @@
+/* Inicio Productos */
+.registro {
+    padding: 2rem 5rem;
+    position: relative;
+}
+
+.registro title {
+    display: block;
+    font-family: var(--roboto);
+    font: bold;
+    font-size: 25px;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+.registro .input-container {
+    margin-top: -10px;
+    /* text-align: center; */
+
+}
+
+.registro .input {
+    font-family: var(--roboto);
+    font: bold;
+    font-size: 20px;
+    width: 250px;
+    margin-bottom: 2%;
+    border-radius: 5%;
+    box-shadow: none;
+    
+}
+
+.registro .-title .paragraph>p {
+    padding: .4rem 0;
+    font: bold;
+    font-size: 49px/ 60px;
+}
+
+#button1 {
+    background-color: #4CAF50;
+    font-size: 26px;
+    border-radius: 4px;
+    width: 30%;
+    margin-top: 5%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Green */
+
+/* Fin Productos */
