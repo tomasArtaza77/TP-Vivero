@@ -1,41 +1,45 @@
-$(document).ready(function(){
+$(document).ready(function () {
+    header()
+})
 
-    $(".subheader").hide(); // no esta logueado personal del vivero
-
+function header() {
     var logueado = localStorage.getItem("logueado");
     var correo = localStorage.getItem("correo");
 
-    if(logueado == "true" && correo == 'botanica@gmail.com'){
-        $(".mainheader").hide();
-        $(".subheader").show();
+    if (logueado === "true" && correo == 'botanica@gmail.com') {
+        getHeaderBotanica()
     } else {
-        $(".subheader").hide();
-        $(".mainheader").show();
+        getHeaderCliente(logueado)
     }
-    actualizar()
+}
 
-})
+function getHeaderCliente(logueado) {
+    if (logueado === "true") {
+        $("#login_id").hide();
+        $("#logout_id").show();
+        $("#registro_id").hide();
+        $("#clima").hide();
+
+    } else {
+        $("#login_id").show();
+        $("#logout_id").hide();
+        $("#registro_id").hide();
+        $("#puntos_venta_id").show();
+    }
+}
+
+function getHeaderBotanica() {
+    $("#login_id").hide();
+    $("#logout_id").show();
+    $("#registro_id").show();
+    $("#clima_id").show();
+    $("#puntos_venta_id").hide();
+}
 
 function logout() {
-    
     localStorage.removeItem("correo");
     localStorage.setItem("logueado", false);
-    
-    actualizar()
-
-
+    header()
 }
 
-function actualizar() {
 
-    var logueado = localStorage.getItem("logueado");
-
-    if(logueado == "true" && correo == 'botanica@gmail.com'){
-        $(".mainheader").hide();
-        $(".subheader").show();
-    } else if(logueado == "true"){
-        $(".subheader").hide();
-        $(".mainheader").show();
-    }
-
-}

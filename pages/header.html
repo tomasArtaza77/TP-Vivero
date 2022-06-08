@@ -1,110 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Vivero</title>
 
-        <!-- Bootstrap css -->
-        <link rel="stylesheet" href="../css/bootstrap.min.css">
-        
-        <!-- css file -->
-        <link rel="stylesheet" href="../css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivero</title>
 
-        <!-- font awesome icons -->
-        <link rel="stylesheet" href="../css/all.min.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
-        
-        <!-- Jquery js -->
-        <script src="../js/jquery.3.6.0.js"></script>
-        <!-- Bootstrap js -->
-        <script src="../js/bootstrap.min.js"></script>
-        <!-- Log In -->
-        <script src="../js/login.js"></script>
-        <script src="../js/header.js"></script>
+    <!-- css file -->
+    <link rel="stylesheet" href="../css/style.css">
 
-        
-    </head>
-    <body>
-        <!-- Inicio Header -->   
-        <header class="header-area mainheader" style="display: none;"> 
-            <div class="main-menu">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <div class="me-auto"></div>
-                            <a class="navbar-brand"><img src="../img/brand-logo/logo/logo2.png" class="img-size" alt=""></a>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="../pages/home.html">Home</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../pages/products.html">Productos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../pages/mapa.html">Consultar Puntos de Venta</a>
-                                </li>
-                                <!-- <li class="nav-item">
-                                    <a class="nav-link" href="../pages/clima.html">Consultar Clima</a>
-                                </li> -->
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../pages/about.html">Nosotros</a>
-                                </li>                                
-                                <li class="nav-item">
-                                    <a class="nav-link" id="login_id" href="../pages/login.html">Log In</a>
-                                </li>                                
-                                <li class="nav-item">
-                                    <a class="nav-link" id="logout_id" href="../pages/login.html" onclick="logout()">Log Out</a>
-                                </li>
-                                
-                            </ul>
-                        </div>
-                        
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="../css/all.min.css">
+
+
+    <!-- Jquery js -->
+    <script src="../js/jquery.3.6.0.js"></script>
+    <!-- Bootstrap js -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- Log In -->
+    <script src="../js/login.js"></script>
+    <script src="../js/header.js"></script>
+
+
+</head>
+
+<body>
+    <header class="header-area mainheader">
+        <div class="main-menu">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="me-auto"></div>
+                        <a class="navbar-brand"><img src="../img/brand-logo/logo/logo2.png" class="img-size" alt=""></a>
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="../pages/home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../pages/products.html">Productos</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="registro_id" style="display: none;"
+                                    href="../pages/registroPlanta.html">Registrar Planta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="clima_id" style="display: none;"
+                                    href="../pages/clima.html">Consultar Clima</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="puntos_venta_id" href="../pages/mapa.html">Consultar Puntos de
+                                    Venta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="login_id" style="display: none;" href="../pages/login.html">Log
+                                    In</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="logout_id" style="display: none;" href="../pages/login.html"
+                                    onclick="logout()">Log Out</a>
+                            </li>
+
+                        </ul>
                     </div>
-                </nav>
-            </div>
-        </header>
-        <!-- Fin Header -->
 
+                </div>
+            </nav>
+        </div>
+    </header>
+</body>
 
-        <!-- Inicio Header Log In Botanica-->
-        <header class="header-area subheader"  style="display: none;">
-            <div class="main-menu">
-                <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <div class="me-auto"></div>
-                            <a class="navbar-brand"><img src="../img/brand-logo/logo/logo2.png" class="img-size" alt=""></a>
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../pages/products.html">Productos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../pages/registroPlanta.html">Registrar Planta</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="../pages/clima.html">Consultar Clima</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link"  href="../pages/login.html" onclick="logout()">Log Out</a>
-                                </li>
-                            </ul>
-                                
-                        </div>
-                        
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- Fin Header Log In Botanica-->       
-        
-    </body>
-    
 </html>

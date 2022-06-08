@@ -19,7 +19,7 @@ function login() {
         $("#sec_login").hide();
         $("#sec_loginExitoso").show();
 
-        actualizar();
+        header();
     }else{
         if(!correoOK){
             alert("Por favor introduzca un mail válido (name@example.com)");
