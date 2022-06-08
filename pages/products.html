@@ -1,61 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+	<title>Products</title>
 
 	<!-- css file -->
 	<link rel="stylesheet" href="../css/partials/products.css">
 	<link rel="stylesheet" href="../css/style.css">
 	<!-- Bootstrap css -->
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
-	
+
 	<!-- font awesome icons -->
-	<link rel="stylesheet" href="../css/all.min.css"> 
-	
+	<link rel="stylesheet" href="../css/all.min.css">
+
 	<!-- Jquery js -->
 	<script src="../js/jquery.3.6.0.js"></script>
 	<!-- Bootstrap js -->
 	<script src="../js/bootstrap.min.js"></script>
 
 
-	
-    <script>
-        $(function () {
-            $("#includedContent").load("header.html");
-        });
-    </script>
+
+	<script>
+		$(function () {
+			$("#includedContent").load("header.html");
+		});
+	</script>
 
 </head>
-<body onload="buildTable()">
-	
 
-    <!-- Inicio Header -->
-    <div id="includedContent"></div>
+<body onload="showTable()">
+
+
+	<!-- Inicio Header -->
+	<div id="includedContent"></div>
 	<!-- Fin Header -->
-		
+
 	<div class="container">
 
 		<div class="row">
 			<div class="col">
-				<div class="card filter-card">
+				<div class="card filter-card" style=" display: flex; align-items: center; justify-content: center;">
 					<p class="para">Filtrar productos por familia.</p>
-					<input id="search-input" class="form-control" type="text">
+					<div>
+						<input id="search-input" class="form-control" type="text" name="search-input">
+						<button style="background-color: green; border-color: aliceblue; width: 100%; margin-top: 5%; "
+							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
+							class="btn btn-primary btn-lg" onclick="showTable()">Buscar</button>
+						<button
+							style="color: green; background-color: aliceblue; border-color: green; width: 100%;  margin-top: 2%;"
+							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
+							class="btn btn-primary btn-lg" onclick="showTable()">Mostrar todos los productos</button>
+					</div>
 				</div>
-				<div id="tabla-filtro"></div>
 			</div>
 		</div>
-
-		<p class="para">Mostrar productos.</p>
-		<button onclick="showTable()">Mostrar</button>
 		<div id="tabla"></div>
 
 	</div>
 
-    <!-- Products -->
+	<!-- Products -->
+	<script src="../js/productsList.js"></script>
 	<script src="../js/products.js"></script>
 
 </body>
+
 </html>
