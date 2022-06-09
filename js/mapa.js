@@ -19,7 +19,7 @@ function mostrarTiendas() {
 
     let icon = L.divIcon({
         className: 'custom-div-icon',
-        html: "<div style='background-color:#4838cc;' class='marker-pin'></div><i class='fas fa-store'>",
+        html: "<div style='background-color:#4838cc;' class='marker-pin'></div>",
         iconSize: [26, 38],
         iconAnchor: [15, 42],
         popupAnchor: [0, -35]
@@ -50,7 +50,7 @@ function mostrarTiendas() {
 function hacerZoom(nombreTienda) {
     for (let i = 0; i < datosTiendas.length; i++) {
 
-        if (nombreTienda == datosTiendas[i].nombre.toUpperCase()) {
+        if (nombreTienda.toUpperCase() == datosTiendas[i].nombre.toUpperCase()) {
             let latitud = locacionTiendas[i].lat;
             let longitud = locacionTiendas[i].long;
 
@@ -58,7 +58,7 @@ function hacerZoom(nombreTienda) {
 
             let icon = L.divIcon({
                 className: 'custom-div-icon',
-                html: "<div style='background-color:#4238cc;' class='marker-pin'></div><i class='fas fa-parker'>",
+                html: "<div style='background-color:#4238cc;' class='marker-pin'></div>",
                 iconSize: [26, 38],
                 iconAnchor: [15, 42],
                 popupAnchor: [0, -35]

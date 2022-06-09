@@ -14,6 +14,8 @@ function header() {
 }
 
 function getHeaderCliente(logueado) {
+    $("#productos_id").show();
+
     if (logueado === "true") {
         $("#login_id").hide();
         $("#logout_id").show();
@@ -34,6 +36,7 @@ function getHeaderBotanica() {
     $("#registro_id").show();
     $("#clima_id").show();
     $("#puntos_venta_id").hide();
+    $("#productos_id").hide();
 }
 
 function logout() {
