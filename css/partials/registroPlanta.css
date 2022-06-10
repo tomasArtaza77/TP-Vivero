@@ -19,13 +19,24 @@
 
 }
 
-.registro .input {
+.registro .tituloRegistro {
     font-family: var(--roboto);
     font: bold;
-    font-size: 20px;
+    font-size: 28px;
     width: 250px;
-    margin-bottom: 2%;
-    border-radius: 5%;
+    margin-bottom: 1%;
+    border-radius: 2%;
+    box-shadow: none;
+    
+}
+
+.registro .input {
+    font-family: var(--roboto);
+    /* font: bold; */
+    font-size: 100%;
+    width: 250px;
+    margin-bottom: 1%;
+    border-radius: 2%;
     box-shadow: none;
     
 }

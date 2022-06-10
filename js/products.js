@@ -36,7 +36,6 @@ function buildTable(){
 }
 
 function getData() {
-    console.log($('#search-input'))
     if($('#search-input').val() != "") {
         let value = $('#search-input').val() 
         return filterData(value, products)
@@ -66,7 +65,6 @@ function filterData(value, data){
 }
 
 function agregar(id) {
-    console.log(id);
     let alert = document.getElementById('producto-agregado');
     let cantidadProducto = document.getElementById("cantidad").value;
     alert.innerHTML = '';

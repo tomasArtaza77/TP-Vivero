@@ -8,15 +8,15 @@
     <title>Vivero - Registrar Planta</title>
     <script src="../js/jquery.3.6.0.js"></script>
 
-	<!-- css file -->
-	<link rel="stylesheet" href="../css/partials/registroPlanta.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="../css/partials/registroPlanta.css">
     <link rel="stylesheet" href="../css/all.min.css">
-	<link rel="stylesheet" href="../css/style.css">
-	<!-- Bootstrap css -->
-	<link rel="stylesheet" href="../css/bootstrap.min.css">
-
-
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
 
     <script>
         $(function () {
@@ -34,61 +34,58 @@
                 <div class="registro-title">
                     <div class="input-container">
                         <form>
-                            <h2 class="tituloTiendas">Datos de la Planta</h2>
-                            <!-- <title id> Datos de la Planta</title> -->
-
+                            <h3 class="tituloRegistro">Datos de la Planta</h3>
                             <input class="input" id="nombreCientifico" type="text" placeholder="Nombre Científico">
                             <input class="input" id="nombreComun" type="text" placeholder="Nombre Común">
-                            <input class="input" id="fase" type="text" placeholder="Fase">
+                            <input class="input" id="fase" type="text" placeholder="Fase"><br>
                             <input class="input" id="color" type="text" placeholder="Color">
-
-                            <h2 class="tituloTiendas">Datos de la Especie</h2>
-
-                            <input class="input" id="nombreFamilia" type="text" placeholder="Familia">
-                            <input class="input" id="cuidados" type="text" placeholder="Cuidados">
-                            <input class="input" id="fruto" type="text" placeholder="Fruto">
                             <input class="input" id="tipoSuelo" type="text" placeholder="Tipo de suelo">
+                            <div id="container_select_familia">
+                                <h3 class="tituloRegistro">Seleccione una familia</h3>
+                                <select id="select_familia" name="select" onchange="selectedFamilia()">
+                                    <option value="" selected>Familia</option>
+                                    <option value=1>Rosales</option>
+                                    <option value=2>Saxifragales</option>
+                                    <option value=3>Herbáceas</option>
+                                    <option value=0>Otra</option>
 
-                            <h2 class="tituloTiendas">Ubicación</h2>
+                                </select>
+                            </div>
+                            <div id="container_input_familia" style="display: none;">
+                                <input class="input" id="nombreFamilia" type="text" placeholder="Nombre Familia">
+                                <input class="input" id="fruto" type="text" placeholder="Fruto">
+                                <input class="input" id="cuidados" type="text" placeholder="Cuidados">
+                            </div>
+
+                            <h3 class="tituloRegistro">Ubicación</h3>
 
                             <input class="input" id="columna" type="text" placeholder="Columna">
                             <input class="input" id="fila" type="text" placeholder="Fila">
+
                         </form>
+                        <p id="campo_obligatorio_id" style="color: red; display: none;"> Debe completar todos los campos </p>
+                        <button style="background-color: green; border-color: aliceblue; width: 40%;" data-bs-target="#exampleModal"
+                            onclick="onClick()" type="button" class="btn btn-primary btn-lg">Registrar</button>
 
-                        <button style="background-color: green; border-color: aliceblue; width: 40%; margin-left: 20%;"
-                            data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick()" type="button"
-                            class="btn btn-primary btn-lg">Registrar</button>
-                        <!-- <button data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="onClick()">Click
-                            me</button> -->
-
-                        <p id="demo"></p>
-
-                        <script>
-                            function myFunction() {
-                                document.getElementById("demo").innerHTML = "Hello World";
-                            }
-                        </script>
                     </div>
-
                 </div>
             </div>
         </div>
 
     </section>
 
-    <div class="modal fade" id="exampleModal" data-target="#myModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal" id="modal_exitoso" style="display: none;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h3 class="modal-title" id="titulo"> ¡Planta registrada exitosamente!</h5>
                 </div>
                 <div class="modal-body">
-                    <div id="contenedor-datos">                   
+                    <div id="contenedor-datos">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="cerrarModal()">Cerrar</button>
                 </div>
             </div>
         </div>

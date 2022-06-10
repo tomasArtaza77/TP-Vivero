@@ -16,7 +16,7 @@
     <script src="../js/mapa.js"></script>
     <script src="https://kit.fontawesome.com/022fa97a17.js" crossorigin="anonymous"></script>
 
-    <script>
+    <script on>
         $(function () {
             $("#includedContent").load("header.html");
         });
@@ -27,7 +27,15 @@
 <body onload="consultarClima()">
     <div id="includedContent"></div>
     <section class="vh-100" style="background-color: #ffffff;">
-        <div class="container py-5 h-100">
+        <div style=" display: flex; align-items: center; justify-content: center; margin-bottom: -3%;">
+            <button style="background-color: green; border-color: aliceblue; width: 30%; margin-right: 2%;  "
+                data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-primary btn-lg"
+                onclick="consultarClima()">Pronóstico</button>
+            <button style="color: green; background-color: aliceblue; border-color: green; width: 30%;"
+                data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-primary btn-lg"
+                onclick="consultarAlertas()">Alertas</button>
+        </div>
+        <div class="container py-5 h-100" style="display: none;">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-12 col-xl-10">
 
@@ -35,7 +43,8 @@
                         <div class="card-body p-4">
 
                             <div class="row text-center">
-                                <div class="col-md-12 text-center" style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
+                                <div id="container_clima" class="col-md-12 text-center"
+                                    style="margin-top: -1.5rem; margin-bottom: -1.5rem;">
                                     <div id="header_pronostico_id" class="d-flex justify-content-around mt-3">
 
                                     </div>
@@ -66,23 +75,35 @@
 
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-3 text-end">
-                                    <p class="small mt-3 mb-5 pb-5">For a month</p>
-                                    <p class="pb-1"><span class="pe-2">11:00</span> <strong>-4°</strong></p>
-                                    <p class="pb-1"><span class="pe-2">12:00</span> <strong>-4°</strong></p>
-                                    <p class="pb-1"><span class="pe-2">13:00</span> <strong>-5°</strong></p>
-                                    <p class="pb-1"><span class="pe-2">14:00</span> <strong>-7°</strong></p>
-                                    <p class="pb-1"><span class="pe-2">15:00</span> <strong>-6°</strong></p>
-                                    <p class="pb-1"><span class="pe-2">16:00</span> <strong>-4°</strong></p>
-                                    <p><span class="pe-2">17:00</span> <strong>-3°</strong></p>
-                                </div> -->
+
+                                <div id="container_alertas" style=" display: none;">
+                                    <div id="container_select_fecha">
+                                        <h3 class="tituloAlerta">Seleccione una fecha</h3>
+                                        <select id="select_fecha" name="select" onchange="selectedFecha()">
+                                            <!-- <option value="" selected>Fecha</option> -->
+                                            <option value="3" selected>12/4/2022</option>
+                                            <option value="0"> 3/5/2022 </option>
+                                            <option value="1"> 11/5/2022 </option>
+                                            <option value="2"> 3/6/2022 </option>
+
+                                        </select>
+                                    </div>
+                                    <!-- <div id="header_alertas_id" class="d-flex justify-content-around mt-3"> -->
+
+                                </div>
+                                </div>
+                                <div id="next_days_alertas_id">
+                                    <div id="alerta_1" style="margin: 1%; padding: .75rem; display: none;">
+                                    </div>
+                                </div>
                             </div>
-
                         </div>
-                    </div>
 
+                    </div>
                 </div>
+
             </div>
+        </div>
         </div>
     </section>
 
