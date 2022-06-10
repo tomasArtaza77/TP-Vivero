@@ -14,6 +14,7 @@ let planta = {
         columna: "",
     }
 }
+
 let familia = [
     {
         id: 1,
@@ -37,21 +38,6 @@ let familia = [
 
 let familiaIsEmpty = true
 
-function selectedFamilia() {
-    if ($("#select_familia").val() != 0 && $("#select_familia").val() != "") {
-        let selFamilia = familia[$("#select_familia").val() - 1]
-        planta.familia.nombreFamilia = selFamilia.nombre
-        planta.familia.fruto = selFamilia.fruto
-        planta.familia.cuidados = selFamilia.cuidados
-        familiaIsEmpty = false;
-        $("#container_input_select").show()
-        $("#container_input_familia").hide()
-    } else {
-        familiaIsEmpty = true;
-        $("#container_input_select").hide()
-        $("#container_input_familia").show()
-    }
-}
 function onClick() {
     $("#campo_obligatorio_id").hide()
     if (validarInputs()) {
@@ -99,6 +85,21 @@ function crearPlanta() {
 
 }
 
+function selectedFamilia() {
+    if ($("#select_familia").val() != 0 && $("#select_familia").val() != "") {
+        let selFamilia = familia[$("#select_familia").val() - 1]
+        planta.familia.nombreFamilia = selFamilia.nombre
+        planta.familia.fruto = selFamilia.fruto
+        planta.familia.cuidados = selFamilia.cuidados
+        familiaIsEmpty = false;
+        $("#container_input_select").show()
+        $("#container_input_familia").hide()
+    } else {
+        familiaIsEmpty = true;
+        $("#container_input_select").hide()
+        $("#container_input_familia").show()
+    }
+}
 
 function showPlantaRegistrada() {
     var datos = "<h5 class=atributo id=info_modal >Nombre Científico: " + planta.nombreCientifico + "</h5>" +
@@ -111,6 +112,7 @@ function showPlantaRegistrada() {
         "<h5 class=atributo id=info_modal >Tipo Suelo: " + planta.tipoSuelo + "</h5>" +
         "<h5 class=atributo id=info_modal >Fila: " + planta.ubicacionDeposito.fila + "</h5>" +
         "<h5 class=atributo id=info_modal >Columna: " + planta.ubicacionDeposito.columna + "</h5>"
+
     document.getElementById("contenedor-datos").innerHTML = datos;
     $("#modal_exitoso").show()
 }

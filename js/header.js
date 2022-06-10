@@ -44,5 +44,3 @@ function logout() {
     localStorage.setItem("logueado", false);
     header()
 }
-
-

@@ -2,13 +2,11 @@ var locacionTiendas = [{ lat: -34.524571, long: -58.705378 },
 { lat: -34.523620, long: -58.709939 },
 { lat: -34.520597, long: -58.709231 },
 { lat: -34.521624, long: -58.698503 },
-//SAN MIGUEL
 { lat: -34.546742, long: -58.707800 },
-{ lat: -34.546017,  long: -58.703884 },
-{ lat: -34.540620,  long: -58.715291 },
-//JCP
-{ lat: -34.522142,  long: -58.751338 },
-{ lat: -34.520551,  long: -58.759420 },
+{ lat: -34.546017, long: -58.703884 },
+{ lat: -34.540620, long: -58.715291 },
+{ lat: -34.522142, long: -58.751338 },
+{ lat: -34.520551, long: -58.759420 },
 { lat: -34.522894, long: -58.751452 }];
 
 var datosTiendas = [{ nombre: "Vivero Polvorines", horario: "09:00 a 18:00", telefono: "(011) 4469-6783", direccion: "Velazquéz 1882" },

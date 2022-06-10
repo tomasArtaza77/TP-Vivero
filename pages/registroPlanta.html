@@ -3,20 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     <title>Vivero - Registrar Planta</title>
     <script src="../js/jquery.3.6.0.js"></script>
 
-    <!-- css file -->
     <link rel="stylesheet" href="../css/partials/registroPlanta.css">
     <link rel="stylesheet" href="../css/all.min.css">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Bootstrap css -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-
-
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
 
     <script>
         $(function () {
@@ -26,7 +19,6 @@
 </head>
 
 <body>
-
     <div id="includedContent"></div>
     <section class="registro">
         <div class="container-fuild">
@@ -48,7 +40,6 @@
                                     <option value=2>Saxifragales</option>
                                     <option value=3>Herbáceas</option>
                                     <option value=0>Otra</option>
-
                                 </select>
                             </div>
                             <div id="container_input_familia" style="display: none;">
@@ -56,22 +47,19 @@
                                 <input class="input" id="fruto" type="text" placeholder="Fruto">
                                 <input class="input" id="cuidados" type="text" placeholder="Cuidados">
                             </div>
-
                             <h3 class="tituloRegistro">Ubicación</h3>
-
                             <input class="input" id="columna" type="text" placeholder="Columna">
                             <input class="input" id="fila" type="text" placeholder="Fila">
-
                         </form>
-                        <p id="campo_obligatorio_id" style="color: red; display: none;"> Debe completar todos los campos </p>
-                        <button style="background-color: green; border-color: aliceblue; width: 40%;" data-bs-target="#exampleModal"
-                            onclick="onClick()" type="button" class="btn btn-primary btn-lg">Registrar</button>
-
+                        <p id="campo_obligatorio_id" style="color: red; display: none;"> Debe completar todos los campos
+                        </p>
+                        <button style="background-color: green; border-color: aliceblue; width: 40%;"
+                            data-bs-target="#exampleModal" onclick="onClick()" type="button"
+                            class="btn btn-primary btn-lg">Registrar</button>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
     <div class="modal" id="modal_exitoso" style="display: none;">

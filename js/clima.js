@@ -5,27 +5,6 @@ let selectedPronostico = false;
 let selectedAlertas = false;
 let fechaSeleccionada = "3"
 
-async function selectedFecha() {
-    if ($("#select_fecha").val() != fechaSeleccionada) {
-        $("#alerta_1").empty()
-        let url = api + alertasUrl + $("#select_fecha").val();
-        await axios.get(url).then(
-            function (response) {
-                alerta = {
-                    fecha: response.data.alerts[0].date,
-                    info: response.data.alerts[0].title,
-                    zonas: response.data.alerts[0].zones
-                }
-            }
-        )
-        $("#container_alertas").show()
-        $("#alerta_1").show()
-        selectedAlertas = false
-        fechaSeleccionada = $("#select_fecha").val()
-        renderTableAlertas(alerta)
-    }
-}
-
 async function consultarAlertas() {
     $("#alerta_1").empty()
     let url = api + alertasUrl + fechaSeleccionada;
@@ -52,6 +31,27 @@ async function consultarAlertas() {
         $("#alerta_1").show()
     }
 
+}
+
+async function selectedFecha() {
+    if ($("#select_fecha").val() != fechaSeleccionada) {
+        $("#alerta_1").empty()
+        let url = api + alertasUrl + $("#select_fecha").val();
+        await axios.get(url).then(
+            function (response) {
+                alerta = {
+                    fecha: response.data.alerts[0].date,
+                    info: response.data.alerts[0].title,
+                    zonas: response.data.alerts[0].zones
+                }
+            }
+        )
+        $("#container_alertas").show()
+        $("#alerta_1").show()
+        selectedAlertas = false
+        fechaSeleccionada = $("#select_fecha").val()
+        renderTableAlertas(alerta)
+    }
 }
 
 async function renderTableAlertas(alerta) {

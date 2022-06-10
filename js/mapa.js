@@ -25,7 +25,6 @@ function mostrarTiendas() {
         popupAnchor: [0, -35]
     });
 
-    //carga de locaciones
     var cluster = L.markerClusterGroup();
     for (let index = 0; index < locacionTiendas.length; index++) {
         cluster.addLayers([
@@ -36,14 +35,13 @@ function mostrarTiendas() {
                     "<b>" + "Telefóno: " + "</b>" + datosTiendas[index].telefono),
         ])
 
-        
-
         $("#grupo1").append("<option id=tienda" + index + ">" + datosTiendas[index].nombre + "</option>");
         $("#tienda" + index).on("click", function (event) {
             let nombreTienda = event.target.innerText;
             hacerZoom(nombreTienda);
         });
     }
+
     cluster.addTo(map);
 }
 
@@ -75,7 +73,6 @@ function hacerZoom(nombreTienda) {
 }
 
 function dibujarZonas() {
-    // BROWN
     L.polygon([
         L.latLng(-34.523215, -58.746536),
         L.latLng(-34.530210, -58.758802),
@@ -83,7 +80,6 @@ function dibujarZonas() {
         L.latLng(-34.515241, -58.752951),
     ], { color: 'brown' }).addTo(map);
 
-    // GREEN
     L.polygon([
         L.latLng(-34.550677, -58.705811),
         L.latLng(-34.544372, -58.699481),
@@ -92,7 +88,6 @@ function dibujarZonas() {
 
     ], { color: 'green' }).addTo(map);
 
-    // PURPLE
     var latlngs = [
         [-34.523483, -58.696333],
         [-34.520382, -58.699940],
@@ -103,5 +98,5 @@ function dibujarZonas() {
 
     ]
 
-    L.polygon(latlngs, { color: 'purple' }).addTo(map); //Esta linea es necesaria para cambiar el color del poligono
+    L.polygon(latlngs, { color: 'purple' }).addTo(map);
 }

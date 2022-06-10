@@ -19,7 +19,7 @@ function buildTable(){
                     <p>Tipo de suelo: ${element.tipo_suelo}</p>
                     <p>Familia: ${element.familia.nombre}</p>
                     <div style = "margin: 0 auto;">
-                    <input id="cantidad" type="number" placeholder="0" step="1" min="0" max="10" style="width: 3em;">
+                    <input id="cantidad_${element.id}" type="number" placeholder="0" step="1" min="0" max="10" style="width: 3em;">
                     <button
                             style="margin-top: 10px; font-size: 15px; color: green; background-color: aliceblue; border-color: green; width: 100%;"
                             data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
@@ -43,7 +43,6 @@ function getData() {
         $('#search-input').val('')
         return filterData(value, products)
     } else {
-        console.log(products)
         return products
     }
 }
@@ -63,7 +62,6 @@ function filterData(value, data){
     }
 
     if(Object.keys(filtrar).length === 0) {
-        console.log("alerta")
         alert("No se han encontrado coincidencias, por favor intente de nuevo.");
         return;
     }
@@ -73,7 +71,7 @@ function filterData(value, data){
 
 function agregar(id) {
     let alert = document.getElementById('producto-agregado');
-    let cantidadProducto = document.getElementById("cantidad").value;
+    let cantidadProducto = document.getElementById(`cantidad_${id}`).value;
     alert.innerHTML = '';
     for (const element of products) {
         if(id == element.id){
@@ -86,5 +84,3 @@ function agregar(id) {
         }
     }
 }
-
-

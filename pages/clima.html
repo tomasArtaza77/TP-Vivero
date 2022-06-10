@@ -5,15 +5,11 @@
     <meta charset="UTF-8">
     <title>Vivero</title>
 
-    <!--Linkeo de codigo css y js-->
-    <link rel="stylesheet" href="../css/mapa.css">
     <script src="../js/clima.js"></script>
     <script src="../js/jquery.3.6.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.15.3/axios.min.js"
         integrity="sha512-V6IDfQu/TH8jr2FUTNMaR8ck+NTj4lFftam3O4vumLTKlNO53KCUkhb26zJ2KmBpCno8C5K9C2eSK5a5H3FtZQ=="
         crossorigin="anonymous"></script>
-
-    <script src="../js/mapa.js"></script>
     <script src="https://kit.fontawesome.com/022fa97a17.js" crossorigin="anonymous"></script>
 
     <script on>
@@ -80,7 +76,6 @@
                                     <div id="container_select_fecha">
                                         <h3 class="tituloAlerta">Seleccione una fecha</h3>
                                         <select id="select_fecha" name="select" onchange="selectedFecha()">
-                                            <!-- <option value="" selected>Fecha</option> -->
                                             <option value="3" selected>12/4/2022</option>
                                             <option value="0"> 3/5/2022 </option>
                                             <option value="1"> 11/5/2022 </option>
@@ -88,22 +83,16 @@
 
                                         </select>
                                     </div>
-                                    <!-- <div id="header_alertas_id" class="d-flex justify-content-around mt-3"> -->
-
                                 </div>
-                                </div>
-                                <div id="next_days_alertas_id">
-                                    <div id="alerta_1" style="margin: 1%; padding: .75rem; display: none;">
-                                    </div>
+                            </div>
+                            <div id="next_days_alertas_id">
+                                <div id="alerta_1" style="margin: 1%; padding: .75rem; display: none;">
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
-        </div>
         </div>
     </section>
 

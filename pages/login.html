@@ -7,37 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
 
-    <!-- css file -->
     <link rel="stylesheet" href="../css/partials/login.css">
     <link rel="stylesheet" href="../css/style.css">
-    <!-- Bootstrap css -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-
-    <!-- font awesome icons -->
     <link rel="stylesheet" href="../css/all.min.css">
 
 
-    <!-- Jquery js -->
     <script src="../js/jquery.3.6.0.js"></script>
-    <!-- Bootstrap js -->
     <script src="../js/bootstrap.min.js"></script>
-    <!-- Login -->
     <script src="../js/login.js"></script>
-
     <script>
         $(function () {
             $("#header").load("header.html");
         });
     </script>
-
-
 </head>
 
 <body>
-    <!-- Inicio Header -->
     <div id="header"></div>
-    <!-- Fin Header -->
-
     <form class="form-signin" id="sec_login">
         <h3 class="form-signin-heading">Welcome Back! Please Sign In</h3>
         <hr class="colorgraph"><br>
@@ -45,7 +32,6 @@
         <input type="password" class="form-control" id="input_password" placeholder="Contraseña" required="true">
         <button type="submit" id="boton_iniciar" value="Iniciar Sesión" onclick="login()">Iniciar Sesión</button>
         <hr><br>
-
     </form>
 
     <div class="form-signin" id="sec_loginExitoso" style="display: none;">
@@ -53,7 +39,6 @@
         <hr class="colorgraph"><br>
         <a href="home.html" type="button" id="boton_iniciar">Ir al home</a>
     </div>
-
 </body>
 
 </html>
