@@ -39,11 +39,12 @@
 	<!-- Fin Header -->
 
 	<div class="container">
+		<div id="contenedor-datos">                   
 
 		<div class="row">
 			<div class="col">
 				<div class="card filter-card" style=" display: flex; align-items: center; justify-content: center;">
-					<p class="para">Filtrar productos por familia.</p>
+					<p class="para">Filtrar productos por nombre ó familia.</p>
 					<div>
 						<input id="search-input" class="form-control" type="text" name="search-input">
 						<button style="background-color: green; border-color: aliceblue; width: 100%; margin-top: 5px; margin-bottom: 5px; "
@@ -58,6 +59,22 @@
 			</div>
 		</div>
 		<div id="tabla"></div>
+
+		<div class="modal fade" id="exampleModal" data-target="#myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 class="modal-title" id="titulo"> Usted agregó exitosamente al pedido:</h5>
+					</div>
+					<div class="modal-body">
+						<div id="producto-agregado"></div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+    	</div>
 
 	</div>
 

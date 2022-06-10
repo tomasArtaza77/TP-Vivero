@@ -12,20 +12,16 @@ function buildTable(){
         <div class = "row">
             <div class = "column"> 
                 <div class = "card"> 
-                    <p>N°: ${element.id}</p>
                     <img src="${element.img}" alt="Product image"><br>
                     <p>Nombre: ${element.nombre_comun}</p>
                     <p>Nombre científico: ${element.nombre_cientifico}</p>
                     <p>Color: ${element.color}</p>
                     <p>Tipo de suelo: ${element.tipo_suelo}</p>
-                    <p>Fase: ${element.fase}</p>
-                    <p>Ubicación: ${element.ubicacion}</p>
-                    <p>Estado: ${element.estado}</p>
                     <p>Familia: ${element.familia.nombre}</p>
                     <button
 							style="color: green; background-color: aliceblue; border-color: green; width: 100%;"
 							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
-							class="btn btn-primary btn-lg" onclick="agregar(element.nombre_comun)">Agregar
+							class="btn btn-primary btn-lg" onclick="agregar(${element.id})">Agregar
                     </button>
                 </div>
             </div>
@@ -37,12 +33,6 @@ function buildTable(){
     $('input[name=search-input').val('');
 
 }
-
-function agregar(a){
-    console.log(a);
-    //alert(`'Agregado al carrito: '${a}`);
-}
-
 
 function getData() {
     console.log($('#search-input'))
@@ -59,10 +49,32 @@ function filterData(value, data){
     for (const element of data) {
         value = value.toLowerCase()
         let familia = element.familia.nombre.toLowerCase()
+        let nombre = element.nombre_comun.toLowerCase()
 
-        if(familia.includes(value)){
+        if(familia.includes(value) || nombre.includes(value)){
             filtrar.push(element)
         }
     }
     return filtrar
+}
+
+function agregar(id) {
+    console.log(id);
+    showPlantaAgregada2(id);
+}
+
+function showPlantaAgregada2(id){
+    let alert = document.getElementById('producto-agregado')
+    alert.innerHTML = ''
+    for (const element of products) {
+        if(id == element.id){
+            let row = 
+            `
+            <h5 class=atributo id=nombreCientificoModal >Nombre: ${element.nombre_comun}</h5>
+            `
+            ;
+            alert.innerHTML += row;
+        }
+    }
+
 }
