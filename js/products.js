@@ -60,10 +60,6 @@ function filterData(value, data){
 
 function agregar(id) {
     console.log(id);
-    showPlantaAgregada2(id);
-}
-
-function showPlantaAgregada2(id){
     let alert = document.getElementById('producto-agregado')
     alert.innerHTML = ''
     for (const element of products) {
@@ -76,5 +72,4 @@ function showPlantaAgregada2(id){
             alert.innerHTML += row;
         }
     }
-
 }
