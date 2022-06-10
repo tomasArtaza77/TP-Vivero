@@ -21,7 +21,12 @@ function buildTable(){
                     <p>Fase: ${element.fase}</p>
                     <p>Ubicación: ${element.ubicacion}</p>
                     <p>Estado: ${element.estado}</p>
-                    <p>Familia: ${element.familia}</p>
+                    <p>Familia: ${element.familia.nombre}</p>
+                    <button
+							style="color: green; background-color: aliceblue; border-color: green; width: 100%;"
+							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
+							class="btn btn-primary btn-lg" onclick="agregar(element.nombre_comun)">Agregar
+                    </button>
                 </div>
             </div>
         </div>	    
@@ -32,6 +37,12 @@ function buildTable(){
     $('input[name=search-input').val('');
 
 }
+
+function agregar(a){
+    console.log(a);
+    //alert(`'Agregado al carrito: '${a}`);
+}
+
 
 function getData() {
     console.log($('#search-input'))
@@ -47,7 +58,7 @@ function filterData(value, data){
     let filtrar = []
     for (const element of data) {
         value = value.toLowerCase()
-        let familia = element.familia.toLowerCase()
+        let familia = element.familia.nombre.toLowerCase()
 
         if(familia.includes(value)){
             filtrar.push(element)
