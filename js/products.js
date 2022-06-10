@@ -18,6 +18,7 @@ function buildTable(){
                     <p>Color: ${element.color}</p>
                     <p>Tipo de suelo: ${element.tipo_suelo}</p>
                     <p>Familia: ${element.familia.nombre}</p>
+                    <input id="cantidad" type="number" placeholder="Agregar" step="1" min="0" max="10" style="width: 5em; margin-bottom: 5px;">
                     <button
 							style="color: green; background-color: aliceblue; border-color: green; width: 100%;"
 							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
@@ -54,19 +55,25 @@ function filterData(value, data){
         if(familia.includes(value) || nombre.includes(value)){
             filtrar.push(element)
         }
+        /*
+        else{
+            alert("No se han encontrado coincidencias, por favor intente de nuevo.");
+        }
+        */
     }
     return filtrar
 }
 
 function agregar(id) {
     console.log(id);
-    let alert = document.getElementById('producto-agregado')
-    alert.innerHTML = ''
+    let alert = document.getElementById('producto-agregado');
+    let cantidadProducto = document.getElementById("cantidad").value;
+    alert.innerHTML = '';
     for (const element of products) {
         if(id == element.id){
             let row = 
             `
-            <h5 class=atributo id=nombreCientificoModal >Nombre: ${element.nombre_comun}</h5>
+            <h5 class=atributo id=nombreCientificoModal >Nombre: ${element.nombre_comun} - Cantidad: ${cantidadProducto}</h5>
             `
             ;
             alert.innerHTML += row;
