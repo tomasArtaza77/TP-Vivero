@@ -55,11 +55,12 @@ function filterData(value, data){
         if(familia.includes(value) || nombre.includes(value)){
             filtrar.push(element)
         }
-        /*
+        
         else{
             alert("No se han encontrado coincidencias, por favor intente de nuevo.");
+            break;
         }
-        */
+        
     }
     return filtrar
 }
