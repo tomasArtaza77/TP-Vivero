@@ -18,12 +18,14 @@ function buildTable(){
                     <p>Color: ${element.color}</p>
                     <p>Tipo de suelo: ${element.tipo_suelo}</p>
                     <p>Familia: ${element.familia.nombre}</p>
-                    <input id="cantidad" type="number" placeholder="Agregar" step="1" min="0" max="10" style="width: 5em; margin-bottom: 5px;">
+                    <div style = "margin: 0 auto;">
+                    <input id="cantidad" type="number" placeholder="0" step="1" min="0" max="10" style="width: 3em;">
                     <button
-							style="color: green; background-color: aliceblue; border-color: green; width: 100%;"
-							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
-							class="btn btn-primary btn-lg" onclick="(agregar(${element.id}))">Agregar
+                            style="margin-top: 10px; font-size: 15px; color: green; background-color: aliceblue; border-color: green; width: 100%;"
+                            data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
+                            class="btn btn-primary btn-lg" onclick="(agregar(${element.id}))">Agregar
                     </button>
+                </div>
                 </div>
             </div>
         </div>	   
@@ -38,8 +40,10 @@ function buildTable(){
 function getData() {
     if($('#search-input').val() != "") {
         let value = $('#search-input').val() 
+        $('#search-input').val('')
         return filterData(value, products)
     } else {
+        console.log(products)
         return products
     }
 }
@@ -55,12 +59,15 @@ function filterData(value, data){
             filtrar.push(element)
         }
         
-        else{
-            alert("No se han encontrado coincidencias, por favor intente de nuevo.");
-            break;
-        }
         
     }
+
+    if(Object.keys(filtrar).length === 0) {
+        console.log("alerta")
+        alert("No se han encontrado coincidencias, por favor intente de nuevo.");
+        return;
+    }
+
     return filtrar
 }
 
@@ -79,3 +86,5 @@ function agregar(id) {
         }
     }
 }
+
+
