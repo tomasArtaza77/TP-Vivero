@@ -9,7 +9,7 @@ function buildTable(){
     for (const element of data) {
         let row = 
         `
-        <div class = "row">
+       <div class = "row">
             <div class = "column"> 
                 <div class = "card"> 
                     <img src="${element.img}" alt="Product image"><br>
@@ -21,11 +21,11 @@ function buildTable(){
                     <button
 							style="color: green; background-color: aliceblue; border-color: green; width: 100%;"
 							data-bs-toggle="modal" data-bs-target="#exampleModal" type="button"
-							class="btn btn-primary btn-lg" onclick="agregar(${element.id})">Agregar
+							class="btn btn-primary btn-lg" onClick="(agregar(${element.id}))">Agregar
                     </button>
                 </div>
             </div>
-        </div>	    
+        </div>	   
         `
         ;
         table.innerHTML += row;
